@@ -13,7 +13,7 @@ function App() {
 
   const fetchItems = async () => {
     try {
-      const res = await axios.get('http://localhost:5000/api/items');
+      const res = await axios.get('newrepo-production-7231.up.railway.app/api/items');
       setItems(res.data);
     } catch (err) {
       console.error('Error fetching items:', err);
@@ -31,7 +31,7 @@ function App() {
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      await axios.post('http://localhost:5000/api/items', formData);
+      await axios.post('newrepo-production-7231.up.railway.app/api/items', formData);
       fetchItems(); // Refresh the list
       setFormData({
         name: '',
@@ -49,7 +49,7 @@ function App() {
     // TODO (Student): Implement the delete functionality here
     // Hint: Use axios.delete() and then call fetchItems()
     try {
-      await axios.delete(`http://localhost:5000/api/items/${id}`);
+      await axios.delete(`newrepo-production-7231.up.railway.app/api/items/${id}`);
       fetchItems();
     }catch (err) {
       console.error('Error deleting items:',err);
